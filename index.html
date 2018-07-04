@@ -1,36 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train-Scheduler</title>
 
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 align ="center">Anytime Is Train Time</h1>
-            <h2 align= "center">choo choo. chee chee.</h2>
+            <h1 align="center">Anytime Is Train Time</h1>
+            <h2 align="center">choo choo. chee chee.</h2>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="panel panel-primary"></div>
+
+        </div>
 
     </div>
-    </div>
-
-<!-- Make sure that administrators can submit: 
+    <!-- Make sure that administrators can submit: 
     Train Name 
     Destination
     First Train Time (military time)
     Frequency (in minutes) -->
-<!-- firebase retrieve and manipulate host arrival data with moment.js-->
-<!-- firebase retrieve and manipulate host departure data with moment.js-->
-<!-- App to provide up-to-date arrival times on various trains -->
-<!-- App to provide how many minutes remain until they arrive at their station  -->
-<!-- Code to calculate when next train will arrive, should be relative to current time -->
-<!-- Users from many different machines must be able to view same train times -->
-<!-- Decorate as I wish -->
 
+    <!-- Current Trains -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                <strong>Current Train</strong>
+                </h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover" id='trainTable'>
+                <div>
+                    <div>
+                        <div>Train Name</div>
+                        <div>Line</div>
+                        <div>Destination</div>
+                        <div>Frequency</div>
+                        <div>Next Arrival</div>
+                        <div>Minutes Away</div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add New Trains -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                <title>Add a New Train</title>
+            </h2>
+        </div>
+
+        <div class="panel-body">
+            <!-- Form -->
+            <form>
+                <div class="form-group">
+                    <label for="">Train Name</label>
+                    <input type="text" class="form-control" id="trainNameInput">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Line</label>
+                    <input type="text" class="form-control" id="lineInput">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Destination</label>
+                    <input type="text" class="form-control" id="destinationInput">
+                </div>
+
+                <div class="form-group">
+                    <label for="">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="trainTimeInput">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Frequency (min)</label>
+                    <input type="text" class="form-control" id="frequencyInput">
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Javascript -->
+    <script src="assets/javascript/app.js"></script>
+
+    <!-- Pseudocode -->
+
+    <!-- firebase retrieve and manipulate host arrival data with moment.js-->
+    <!-- firebase retrieve and manipulate host departure data with moment.js-->
+    <!-- App to provide up-to-date arrival times on various trains -->
+    <!-- App to provide how many minutes remain until they arrive at their station  -->
+    <!-- Code to calculate when next train will arrive, should be relative to current time -->
+    <!-- Users from many different machines must be able to view same train times -->
+    <!-- Decorate as I wish -->
 </body>
-</html>
 
+</html>
